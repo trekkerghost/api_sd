@@ -38,4 +38,4 @@ class Product(models.Model):
         verbose_name=_('Modified date'))
 
     def __str__(self):
-        return self.name
+        return "Producto ['id':{0}, 'name':{1}]".format(self.pk, self.name )
