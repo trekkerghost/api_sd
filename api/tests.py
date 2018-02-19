@@ -27,3 +27,13 @@ class ModelTestCase(TestCase):
         cantidad_productos_despues = Product.objects.count()
         self.assertNotEqual(cantidad_productos_antes,
                             cantidad_productos_despues)
+
+
+class APITestCase(TestCase):
+    def setUp(self):
+        pass
+
+    def test_no_hay_productos(self):
+        response = self.client.get(reverse('api:list'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "No existen productos")
