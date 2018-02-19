@@ -30,10 +30,16 @@ class ModelTestCase(TestCase):
 
 
 class APITestCase(TestCase):
+    '''Definición de las pruebas para la vista de la API'''
     def setUp(self):
         pass
 
     def test_no_hay_productos(self):
         response = self.client.get(reverse('api:list'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "No existen productos")
+        self.assertContains(response, 'No existen productos')
+
+    def test_producto_no_existe(self):
+        response = self.client.get(reverse('api:get', kwargs={'pk': 0}))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Producto no encontrado')

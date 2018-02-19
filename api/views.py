@@ -1,6 +1,5 @@
 '''Definicion de vistas de la API'''
 from django.http import JsonResponse
-from django.shortcuts import render
 from django.views import View
 from django.db.models import ObjectDoesNotExist
 
@@ -10,8 +9,10 @@ from api.models import Product
 
 
 class APIProductos(View):
-    def get(self, request, *args, **kwargs):
+    def get(self, *args, **kwargs):
+        '''Definición de método GET para listar y obtener'''
         if 'pk' in kwargs:
+        #Si existe un parámetro en la URL estamos buscando un producto
             try:
                 id_producto = kwargs.get('id', None)
                 producto = Product.objects.prefetch_related('tags').get(
