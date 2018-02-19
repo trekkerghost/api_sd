@@ -1,4 +1,6 @@
 ''' Declaración de modelos usados por la API'''
+import datetime
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -28,6 +30,12 @@ class Product(models.Model):
         max_digits=10,
         verbose_name=_('Product quantity'))
     tags = models.ManyToManyField(ProductTags, blank=True, verbose_name=_('Product tags'))
+    created_at = models.DateTimeField(
+        auto_now_add=True,  editable=False, verbose_name=_('Creation date'))
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        editable=False,
+        verbose_name=_('Modified date'))
 
     def __str__(self):
         return self.name
