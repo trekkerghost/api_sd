@@ -27,7 +27,7 @@ class Product(models.Model):
         decimal_places=3,
         max_digits=10,
         verbose_name=_('Product quantity'))
-    tags = models.ManyToManyField(ProductTags, verbose_name=_('Product tags'))
+    tags = models.ManyToManyField(ProductTags, blank=True, verbose_name=_('Product tags'))
 
     def __str__(self):
         return self.name
