@@ -37,7 +37,6 @@ class Product(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True, editable=False, verbose_name=_('Modified date'))
     is_active = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
     product_type = models.CharField(max_length=2, blank=True, null=True)
     is_variation = models.BooleanField(default=False)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
