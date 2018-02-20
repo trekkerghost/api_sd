@@ -32,12 +32,6 @@ class Product(models.Model):
         verbose_name=_('Product Name'))
     description = models.TextField(
         blank=False, null=False, verbose_name=_('Product Description'))
-    quantity = models.DecimalField(
-        blank=False,
-        null=False,
-        decimal_places=3,
-        max_digits=10,
-        verbose_name=_('Product quantity'))
     tags = models.ManyToManyField(
         ProductTags, blank=True, verbose_name=_('Product tags'))
     created_at = models.DateTimeField(
@@ -55,3 +49,12 @@ class Product(models.Model):
 
     def __str__(self):
         return "Producto ['id':{0}, 'name':{1}]".format(self.pk, self.name)
+
+
+# class ProductDetail(models.Model):
+#     quantity = models.DecimalField(
+#             blank=False,
+#             null=False,
+#             decimal_places=3,
+#             max_digits=10,
+#             verbose_name=_('Product quantity'))
