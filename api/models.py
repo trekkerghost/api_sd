@@ -13,6 +13,14 @@ class ProductTags(models.Model):
     def __str__(self):
         return self.name
 
+class Brand(models.Model):
+    '''Definición de modelo para marca del producto'''
+    name = models.CharField(
+        max_length=220, blank=False, null=False, verbose_name=_('Brand Name'))
+
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     '''Definición de modelo Producto'''
@@ -36,6 +44,7 @@ class Product(models.Model):
         auto_now=True,
         editable=False,
         verbose_name=_('Modified date'))
+
 
     def __str__(self):
         return "Producto ['id':{0}, 'name':{1}]".format(self.pk, self.name )
