@@ -37,6 +37,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True, editable=False, verbose_name=_('Modified date'))
     is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
     product_type = models.CharField(max_length=2, blank=True, null=True)
     is_variation = models.BooleanField(default=False)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
@@ -66,15 +67,18 @@ class ProductDetail(models.Model):
         decimal_places=3,
         max_digits=10,
         default=False,
+        blank=True,
+        null=True,
         verbose_name=_('Precio de  Oferta'))
     offer_day_from = models.DateTimeField(
-        verbose_name=_('Fecha de inicio de oferta'))
+        blank=True, null=True, verbose_name=_('Fecha de inicio de oferta'))
     offer_day_to = models.DateTimeField(
-        verbose_name=_('Fecha de fin de oferta'))
+        blank=True, null=True, verbose_name=_('Fecha de fin de oferta'))
+    sku = models.IntegerField(default=0, verbose_name=_('SKU'))
     quantity = models.DecimalField(
         blank=False,
         null=False,
         decimal_places=3,
         max_digits=10,
         verbose_name=_('Product quantity'))
-    product_id = models.OneToOneField(Product)
+    product = models.OneToOneField(Product)
