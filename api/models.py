@@ -1,6 +1,4 @@
 ''' Declaración de modelos usados por la API'''
-import datetime
-
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -51,10 +49,32 @@ class Product(models.Model):
         return "Producto ['id':{0}, 'name':{1}]".format(self.pk, self.name)
 
 
-# class ProductDetail(models.Model):
-#     quantity = models.DecimalField(
-#             blank=False,
-#             null=False,
-#             decimal_places=3,
-#             max_digits=10,
-#             verbose_name=_('Product quantity'))
+class ProductDetail(models.Model):
+    created = models.DateTimeField(
+        editable=False, verbose_name=_('Creation date'))
+    modified = models.DateTimeField(
+        editable=False, verbose_name=_('Modified date'))
+    is_active = models.BooleanField(default=False, verbose_name=_('Activo'))
+    is_visibility = models.BooleanField(
+        default=False, verbose_name=_('Visible'))
+    price = models.DecimalField(
+        decimal_places=3,
+        max_digits=10,
+        default=False,
+        verbose_name=_('Precio'))
+    price_offer = models.DecimalField(
+        decimal_places=3,
+        max_digits=10,
+        default=False,
+        verbose_name=_('Precio de  Oferta'))
+    offer_day_from = models.DateTimeField(
+        verbose_name=_('Fecha de inicio de oferta'))
+    offer_day_to = models.DateTimeField(
+        verbose_name=_('Fecha de fin de oferta'))
+    quantity = models.DecimalField(
+        blank=False,
+        null=False,
+        decimal_places=3,
+        max_digits=10,
+        verbose_name=_('Product quantity'))
+    product_id = models.OneToOneField(Product)

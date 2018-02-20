@@ -1,4 +1,6 @@
 '''Definicion de vistas de la API'''
+import json
+
 from django.db.models import ObjectDoesNotExist
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
@@ -9,16 +11,18 @@ from api.models import Product, ProductTags
 
 # Create your views here.
 
-@method_decorator(csrf_exempt, name='dispatch')
+
 #para pruebas
+@method_decorator(csrf_exempt, name='dispatch')
 class APIProductos(View):
     '''Definición de la API'''
+
     def get(self, request, *args, **kwargs):
         '''Definición de método GET para listar y obtener'''
         if 'pk' in kwargs:
             #Si existe un parámetro en la URL estamos buscando un producto
             try:
-                id_producto = kwargs.get('id', None)
+                id_producto = kwargs.get('pk', None)
                 producto = Product.objects.prefetch_related('tags').get(
                     pk=id_producto)
                 return JsonResponse(
@@ -32,7 +36,7 @@ class APIProductos(View):
                         'tags': [{
                             'id': tag.id,
                             'name': tag.name
-                        } for tag in producto.tag.all()]
+                        } for tag in producto.tags.all()]
                     },
                     safe=False)
             except ObjectDoesNotExist:
@@ -48,26 +52,33 @@ class APIProductos(View):
                 'tags': [{
                     'id': tag.id,
                     'name': tag.name
-                } for tag in producto.tag.all()]
+                } for tag in producto.tags.all()]
             } for producto in Product.objects.prefetch_related('tags').all()]
             if lista_productos:
                 return JsonResponse(lista_productos, safe=False)
             else:
                 return JsonResponse({'response': 'No existen productos'})
 
-
     def post(self, request, *args, **kwargs):
         ''' Implementación del método POST'''
-        post_data = request.POST.copy()
+        post_data = dict(request.POST)
         if post_data:
-            tags = [ProductTags(name=tag) for tag in post_data.getlist('tags')]
+            lista_tags = []
+            for tag in post_data.get('tags')[0].split(','):
+                nueva_tag = ProductTags(name=tag)
+                nueva_tag.save()
+                lista_tags.append(nueva_tag)
+            nombre = post_data.get('name')[0]
+            descripcion = post_data.get('description')[0]
+            cantidad=post_data.get('quantity')[0]
             producto = Product(
-                name=post_data.get('name'),
-                description=post_data.get('description'),
-                quantity=post_data.get('quantity'))
+                name=nombre,
+                description=descripcion,
+                quantity=cantidad)
             try:
                 producto.save()
-                producto.tags.add(tags)
+                for tag in lista_tags:
+                    producto.tags.add(tag)
                 producto.save()
                 return JsonResponse(
                     {
@@ -75,7 +86,7 @@ class APIProductos(View):
                         'id': producto.pk
                     },
                     safe=False)
-            except Exception:
+            except Exception as e:
                 return JsonResponse(
                     {
                         'response': 'Error al crear el producto'
@@ -101,3 +112,44 @@ class APIProductos(View):
                     safe=False)
             except ObjectDoesNotExist:
                 return JsonResponse({'response': 'Producto no encontrado'})
+
+    def put(self, request, *args, **kwargs):
+        '''Definición de método PUT para actualizar'''
+        print(request.body)
+        post_data = json.loads(request.body.decode('utf-8'))
+
+        # print(request.body)
+        # if post_data:
+        #     try:
+        #         if 'pk' in post_data:
+        #             print('sisasdvskad',post_data)
+        #             lista_tags = []
+        #             for tag in post_data.get('tags')[0].split(','):
+        #                 nueva_tag = ProductTags(name=tag)
+        #                 nueva_tag.save()
+        #                 lista_tags.append(nueva_tag)
+        #             producto = Product.objects.get(pk=post_data.get('pk'))
+        #             producto.name = post_data.get('name')[0]
+        #             producto.description = post_data.get('description')[0]
+        #             producto.quantity=post_data.get('quantity')[0]
+        #             producto.tags = []
+        #             producto.save()
+        #             for tag in lista_tags:
+        #                 producto.tags.add(tag)
+        #             producto.save()
+        #             return JsonResponse(
+        #                 {
+        #                     'response':
+        #                     'Producto modificado satisfactoriamente'
+        #                 },
+        #                 safe=False)
+        #     except ObjectDoesNotExist:
+        #         return JsonResponse(
+        #             {
+        #                 'response': 'Producto no encontrado'
+        #             }, safe=False)
+        # else:
+        #     return JsonResponse(
+        #         {
+        #             'response': 'Petición incorrecta'
+        #         }, safe=False)
