@@ -16,5 +16,16 @@ Versiones utilizadas:
 2. Django 1.11
 3. PostgreSQL 9.5.1
 
-## Base de Datos
+## Pasos para deploy
+
+Crear base de datos
+
+`psql -c "CREATE DATABASE api_sd;" -U postgres`
+
+cargar datos iniciales
+
+`python3 manage.py loaddata brands.json`
+`python3 manage.py loaddata producttags.json`
+`python3 manage.py loaddata productos.json`
+`python3 manage.py loaddata productdetail.json`
 
