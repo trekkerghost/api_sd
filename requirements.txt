@@ -1,0 +1,4 @@
+coverage
+djangorestframework
+markdown
+django-filter
