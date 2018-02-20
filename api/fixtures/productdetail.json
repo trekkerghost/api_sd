@@ -1,0 +1,427 @@
+[
+{
+    "model": "api.productdetail",
+    "pk": 3,
+    "fields": {
+        "created": "2018-01-04T16:33:16.741Z",
+        "modified": "2018-02-15T15:07:35.343Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "170.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 340,
+        "quantity": "8.000",
+        "product": 19
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 4,
+    "fields": {
+        "created": "2018-01-04T16:33:16.749Z",
+        "modified": "2018-01-12T15:33:38.670Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "280.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 65,
+        "quantity": "10.000",
+        "product": 20
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 5,
+    "fields": {
+        "created": "2018-01-04T16:33:16.757Z",
+        "modified": "2018-02-19T19:13:03.937Z",
+        "is_active": true,
+        "is_visibility": false,
+        "price": "165.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 77,
+        "quantity": "9.000",
+        "product": 21
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 6,
+    "fields": {
+        "created": "2018-01-04T16:33:16.765Z",
+        "modified": "2018-02-15T19:59:12.887Z",
+        "is_active": true,
+        "is_visibility": false,
+        "price": "165.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 76,
+        "quantity": "10.000",
+        "product": 22
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 7,
+    "fields": {
+        "created": "2018-01-04T16:33:16.773Z",
+        "modified": "2018-02-12T14:49:18.164Z",
+        "is_active": true,
+        "is_visibility": false,
+        "price": "85.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 83,
+        "quantity": "10.000",
+        "product": 23
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 8,
+    "fields": {
+        "created": "2018-01-04T16:33:16.781Z",
+        "modified": "2018-01-24T00:03:36.100Z",
+        "is_active": true,
+        "is_visibility": false,
+        "price": "180.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 103,
+        "quantity": "10.000",
+        "product": 24
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 9,
+    "fields": {
+        "created": "2018-01-04T16:33:16.789Z",
+        "modified": "2018-02-15T20:05:18.374Z",
+        "is_active": true,
+        "is_visibility": false,
+        "price": "190.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 111,
+        "quantity": "10.000",
+        "product": 25
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 10,
+    "fields": {
+        "created": "2018-01-04T16:33:16.796Z",
+        "modified": "2018-02-15T21:13:22.073Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "160.000",
+        "price_offer": "150.000",
+        "offer_day_from": "2018-02-15T17:21:00Z",
+        "offer_day_to": "2018-02-25T17:21:00Z",
+        "sku": 112,
+        "quantity": "10.000",
+        "product": 26
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 11,
+    "fields": {
+        "created": "2018-01-04T16:33:16.804Z",
+        "modified": "2018-02-16T18:08:50.096Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "160.000",
+        "price_offer": "145.000",
+        "offer_day_from": "2018-02-15T17:21:00Z",
+        "offer_day_to": "2018-02-26T04:00:00Z",
+        "sku": 113,
+        "quantity": "10.000",
+        "product": 27
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 12,
+    "fields": {
+        "created": "2018-01-04T16:33:16.812Z",
+        "modified": "2018-02-15T15:13:48.534Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "280.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 101,
+        "quantity": "10.000",
+        "product": 28
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 13,
+    "fields": {
+        "created": "2018-01-04T16:33:16.821Z",
+        "modified": "2018-02-15T15:30:42.082Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "90.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 146,
+        "quantity": "11.000",
+        "product": 29
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 14,
+    "fields": {
+        "created": "2018-01-04T16:33:16.829Z",
+        "modified": "2018-02-16T00:56:37.102Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "140.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 148,
+        "quantity": "8.000",
+        "product": 30
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 15,
+    "fields": {
+        "created": "2018-01-04T16:33:16.837Z",
+        "modified": "2018-02-15T15:14:18.457Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "350.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 166,
+        "quantity": "10.000",
+        "product": 31
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 16,
+    "fields": {
+        "created": "2018-01-04T16:33:16.844Z",
+        "modified": "2018-02-08T16:53:04.403Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "120.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 172,
+        "quantity": "8.000",
+        "product": 32
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 17,
+    "fields": {
+        "created": "2018-01-04T16:33:16.852Z",
+        "modified": "2018-02-13T15:04:36.259Z",
+        "is_active": true,
+        "is_visibility": false,
+        "price": "100.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 179,
+        "quantity": "17.000",
+        "product": 33
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 18,
+    "fields": {
+        "created": "2018-01-04T16:33:16.862Z",
+        "modified": "2018-02-15T15:14:46.733Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "95.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 181,
+        "quantity": "18.000",
+        "product": 34
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 19,
+    "fields": {
+        "created": "2018-01-04T16:33:16.870Z",
+        "modified": "2018-02-19T18:53:12.008Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "140.000",
+        "price_offer": "130.000",
+        "offer_day_from": "2018-02-15T17:22:00Z",
+        "offer_day_to": "2018-02-25T17:22:00Z",
+        "sku": 190,
+        "quantity": "10.000",
+        "product": 35
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 20,
+    "fields": {
+        "created": "2018-01-04T16:33:16.878Z",
+        "modified": "2018-02-19T16:16:11.530Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "65.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 195,
+        "quantity": "10.000",
+        "product": 36
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 21,
+    "fields": {
+        "created": "2018-01-04T16:33:16.886Z",
+        "modified": "2018-02-15T15:15:47.015Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "140.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 199,
+        "quantity": "9.000",
+        "product": 37
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 22,
+    "fields": {
+        "created": "2018-01-04T16:33:16.894Z",
+        "modified": "2018-02-13T23:15:33.844Z",
+        "is_active": true,
+        "is_visibility": false,
+        "price": "295.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 200,
+        "quantity": "10.000",
+        "product": 38
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 23,
+    "fields": {
+        "created": "2018-01-04T16:33:16.902Z",
+        "modified": "2018-02-14T01:26:50.267Z",
+        "is_active": true,
+        "is_visibility": false,
+        "price": "230.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 210,
+        "quantity": "8.000",
+        "product": 39
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 24,
+    "fields": {
+        "created": "2018-01-04T16:33:16.910Z",
+        "modified": "2018-02-15T15:55:22.309Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "250.000",
+        "price_offer": "220.000",
+        "offer_day_from": "2018-01-05T16:42:00Z",
+        "offer_day_to": "2018-01-06T04:00:00Z",
+        "sku": 216,
+        "quantity": "10.000",
+        "product": 40
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 25,
+    "fields": {
+        "created": "2018-01-04T16:33:16.918Z",
+        "modified": "2018-01-18T19:55:01.285Z",
+        "is_active": true,
+        "is_visibility": false,
+        "price": "130.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 218,
+        "quantity": "10.000",
+        "product": 41
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 26,
+    "fields": {
+        "created": "2018-01-04T16:33:16.925Z",
+        "modified": "2018-01-18T19:55:03.677Z",
+        "is_active": true,
+        "is_visibility": false,
+        "price": "130.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 219,
+        "quantity": "10.000",
+        "product": 42
+    }
+},
+{
+    "model": "api.productdetail",
+    "pk": 27,
+    "fields": {
+        "created": "2018-01-04T16:33:16.935Z",
+        "modified": "2018-01-08T14:42:04.463Z",
+        "is_active": true,
+        "is_visibility": true,
+        "price": "270.000",
+        "price_offer": null,
+        "offer_day_from": null,
+        "offer_day_to": null,
+        "sku": 228,
+        "quantity": "10.000",
+        "product": 43
+    }
+}
+]

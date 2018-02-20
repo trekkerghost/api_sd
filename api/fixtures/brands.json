@@ -1,0 +1,30 @@
+[
+{
+    "model": "api.brand",
+    "pk": 1,
+    "fields": {
+        "name": "ADIDAS"
+    }
+},
+{
+    "model": "api.brand",
+    "pk": 10,
+    "fields": {
+        "name": "ADIDAS"
+    }
+},
+{
+    "model": "api.brand",
+    "pk": 11,
+    "fields": {
+        "name": "NIKE"
+    }
+},
+{
+    "model": "api.brand",
+    "pk": 12,
+    "fields": {
+        "name": "MERREL"
+    }
+}
+]

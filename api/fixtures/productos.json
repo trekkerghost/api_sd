@@ -1,0 +1,477 @@
+[
+{
+    "model": "api.product",
+    "pk": 19,
+    "fields": {
+        "name": "Amanecer Tulipanes",
+        "description": "<p>Arreglo floral con 10 tulipanes, claveles y complementos en canasta mimbre</p>",
+        "created_at": "2018-01-04T16:32:59.963Z",
+        "updated_at": "2018-02-15T15:07:35.334Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 11,
+        "code": 1,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 20,
+    "fields": {
+        "name": "Tripode Primaveral",
+        "description": "<p>Arreglo floral con flores primaverales en tr&iacute;pode de madera</p>",
+        "created_at": "2018-01-04T16:33:00.108Z",
+        "updated_at": "2018-01-12T15:33:38.654Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 11,
+        "code": 2,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 21,
+    "fields": {
+        "name": "Tendedero Ni\u00f1o",
+        "description": "<p>Arreglo floral con 6 rosas, flores primaverales en tonos celestes y blancos en canasta rectangular mimbre</p>",
+        "created_at": "2018-01-04T16:33:00.193Z",
+        "updated_at": "2018-02-19T19:13:03.927Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 11,
+        "code": 3,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 22,
+    "fields": {
+        "name": "Tendedero Ni\u00f1a",
+        "description": "<p>Arreglo floral con 6 rosas, flores primaverales en tonos rosados y blancos en canasta rectangular mimbre</p>",
+        "created_at": "2018-01-04T16:33:00.266Z",
+        "updated_at": "2018-02-15T19:59:12.877Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 11,
+        "code": 4,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 23,
+    "fields": {
+        "name": "Trio",
+        "description": "<p>Arreglo floral con 3 girasoles en canasta mimbre acompa&ntilde;ado con caja de chocolate Ferrero x8</p>",
+        "created_at": "2018-01-04T16:33:00.330Z",
+        "updated_at": "2018-02-12T14:49:18.155Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 11,
+        "code": 5,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 24,
+    "fields": {
+        "name": "Puro Amor",
+        "description": "<p>Arreglo floral con 18 rosas rojas en canasta mimbre en forma de coraz&oacute;n</p>",
+        "created_at": "2018-01-04T16:33:00.406Z",
+        "updated_at": "2018-01-24T00:03:36.086Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 11,
+        "code": 6,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 25,
+    "fields": {
+        "name": "Romina Especial Pasteles",
+        "description": "<p>Arreglo floral con 12 rosas y complementos en tonos pasteles en base de cer&aacute;mica</p>",
+        "created_at": "2018-01-04T16:33:00.463Z",
+        "updated_at": "2018-02-15T20:05:18.364Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 11,
+        "code": 7,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 26,
+    "fields": {
+        "name": "Romina Oto\u00f1al",
+        "description": "<p>Arreglo floral primaveral con crisantemos, claveles, gerberas en tonos oto&ntilde;ales en canasta mimbre</p>",
+        "created_at": "2018-01-04T16:33:00.565Z",
+        "updated_at": "2018-02-15T21:13:22.059Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 11,
+        "code": 8,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 27,
+    "fields": {
+        "name": "Romina Pasteles",
+        "description": "<p>Arreglo floral primaveral con crisantemos, claveles, gerberas en tonos pasteles en canasta mimbre</p>",
+        "created_at": "2018-01-04T16:33:00.658Z",
+        "updated_at": "2018-02-15T21:11:55.236Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 10,
+        "code": 9,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 28,
+    "fields": {
+        "name": "Premium",
+        "description": "<p>Arreglo floral con 10 tulipanes, 10 rosas y complementos en tonos naranjas y amarillos en base de cer&aacute;mica</p>",
+        "created_at": "2018-01-04T16:33:00.746Z",
+        "updated_at": "2018-02-15T15:13:48.525Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 10,
+        "code": 10,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": true,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 29,
+    "fields": {
+        "name": "Mix Girasoles",
+        "description": "<p>Arreglo floral con girasoles y complementos en canasta mimbre</p>",
+        "created_at": "2018-01-04T16:33:00.852Z",
+        "updated_at": "2018-02-15T15:30:42.073Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 10,
+        "code": 11,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": true,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 30,
+    "fields": {
+        "name": "Mullier",
+        "description": "<p>Arreglo floral con 10 tulipanes en florero de cer&aacute;mica</p>",
+        "created_at": "2018-01-04T16:33:00.930Z",
+        "updated_at": "2018-02-15T15:14:04.584Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 10,
+        "code": 12,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": true,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 31,
+    "fields": {
+        "name": "Lagrima Feretro Rojo",
+        "description": "<p>Arreglo floral de p&eacute;same con 48 rosas tipo lagrima para f&eacute;retro</p>",
+        "created_at": "2018-01-04T16:33:01.019Z",
+        "updated_at": "2018-02-15T15:14:18.448Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 10,
+        "code": 13,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": true,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 32,
+    "fields": {
+        "name": "Lagrima Peque\u00f1a",
+        "description": "<p>Arreglo floral de p&eacute;same con 12 rosas y complementos tipo lagrima</p>",
+        "created_at": "2018-01-04T16:33:01.084Z",
+        "updated_at": "2018-01-08T14:30:05.656Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 10,
+        "code": 14,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": true,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 33,
+    "fields": {
+        "name": "Girasoles Paraditos",
+        "description": "<p>Arreglo floral con 8 girasoles paraditos en base de palitos</p>",
+        "created_at": "2018-01-04T16:33:01.148Z",
+        "updated_at": "2018-02-13T15:04:36.250Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 10,
+        "code": 15,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": true,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 34,
+    "fields": {
+        "name": "Fresco X 5",
+        "description": "<p>Arreglo floral con 5 rosas, lilium y complementos en base de cer&aacute;mica</p>",
+        "created_at": "2018-01-04T16:33:01.225Z",
+        "updated_at": "2018-02-15T15:14:46.724Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 10,
+        "code": 16,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": true,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 35,
+    "fields": {
+        "name": "Danza",
+        "description": "<p>Arreglo floral con anthurios, rosas y gerberas en base de cer&aacute;mica</p>",
+        "created_at": "2018-01-04T16:33:01.318Z",
+        "updated_at": "2018-02-15T21:13:37.088Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 10,
+        "code": 17,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": true,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 36,
+    "fields": {
+        "name": "Smile",
+        "description": "<p>Arreglo floral con 3 girasoles mas complementos en base de cer&aacute;mica</p>",
+        "created_at": "2018-01-04T16:33:01.395Z",
+        "updated_at": "2018-02-15T15:15:30.060Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 12,
+        "code": 18,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": true,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 37,
+    "fields": {
+        "name": "Copa Ensue\u00f1o",
+        "description": "<p>Arreglo floral con 6 rosas y complementos en base tipo copa de vidrio</p>",
+        "created_at": "2018-01-04T16:33:01.476Z",
+        "updated_at": "2018-02-15T15:15:47.006Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 12,
+        "code": 19,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 38,
+    "fields": {
+        "name": "Copon Especial",
+        "description": "<p>Arreglo floral con 18 rosas y complementos en cop&oacute;n de cer&aacute;mica</p>",
+        "created_at": "2018-01-04T16:33:01.569Z",
+        "updated_at": "2018-02-13T23:15:33.834Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 12,
+        "code": 20,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 39,
+    "fields": {
+        "name": "Victoria Blush",
+        "description": "<p>Arreglo floral con 24 rosas en base redonda de hojalata pintada</p>",
+        "created_at": "2018-01-04T16:33:01.674Z",
+        "updated_at": "2018-02-14T01:26:50.259Z",
+        "is_active": true,
+        "product_type": "PR",
+        "is_variation": false,
+        "brand": 12,
+        "code": 21,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 40,
+    "fields": {
+        "name": "Tentacion En Ceramica",
+        "description": "<p>Arreglo floral con 24 rosas y follaje en base de cer&aacute;mica</p>",
+        "created_at": "2018-01-04T16:33:01.751Z",
+        "updated_at": "2018-02-15T15:55:22.296Z",
+        "is_active": true,
+        "product_type": "SR",
+        "is_variation": false,
+        "brand": 12,
+        "code": 22,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 41,
+    "fields": {
+        "name": "Combo Teddy Ni\u00f1o",
+        "description": "<p>Arreglo floral con 6 rosas y complementos en canasta mimbre acompa&ntilde;ado con peluche Teddy ni&ntilde;o y globo met&aacute;lico #9</p>",
+        "created_at": "2018-01-04T16:33:01.864Z",
+        "updated_at": "2018-01-18T19:55:01.273Z",
+        "is_active": true,
+        "product_type": "SR",
+        "is_variation": false,
+        "brand": 12,
+        "code": 23,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 42,
+    "fields": {
+        "name": "Combo Teddy Ni\u00f1a",
+        "description": "<p>Arreglo floral con 6 rosas y complementos en canasta mimbre acompa&ntilde;ado con peluche Teddy ni&ntilde;a y globo met&aacute;lico #9</p>",
+        "created_at": "2018-01-04T16:33:01.931Z",
+        "updated_at": "2018-01-18T19:55:03.667Z",
+        "is_active": true,
+        "product_type": "SR",
+        "is_variation": false,
+        "brand": 12,
+        "code": 24,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+},
+{
+    "model": "api.product",
+    "pk": 43,
+    "fields": {
+        "name": "Corona Anthurios Rojos",
+        "description": "<p>Arreglo floral de p&eacute;same con 12 anthurios, rosas y complementos tipo corona redonda en tr&iacute;pode de madera</p>",
+        "created_at": "2018-01-04T16:33:01.997Z",
+        "updated_at": "2018-01-08T14:42:04.446Z",
+        "is_active": true,
+        "product_type": "SR",
+        "is_variation": false,
+        "brand": 12,
+        "code": 25,
+        "family": 1,
+        "is_complement": false,
+        "is_delete": false,
+        "tags": []
+    }
+}
+]
