@@ -17,3 +17,7 @@ tests/report/
 db.sqlite3
 *.php_cs.cache
 .php_cs.cache
+venv
+*.pyc
+staticfiles
+.env

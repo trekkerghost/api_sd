@@ -1,30 +1,29 @@
 language: python
-
 python:
-  - 3.5
-
+- 3.5
 services: postgresql
-
 env:
+  matrix:
   - DJANGO=1.11
-
+  global:
+    secure: Ri5jMTQE81w468knu9apGwJKGyHHAjFa9aGrgzIptjGLQxevCz5WzDiop5tqBtD6maG87QmgM4IKBP20WEmYMFuZERQ39mJFWT8j5I0OY0ZhPTRyvEDpwZIZncDtE1NgFm8u+5eCTFkwp0dB6sO+ww2xnBNUnYU33ZgviPuHO6jIYXxt8UFoKcO6boJLlQTZ73hrA8gIa2x483H768n+tRs++Wy41N7GJzvXRTFtRt6Qn8oZkzyEXw2kQqeRUiK0VLMLOOSqeqWG/aP/3CgApYqp4XXuRqcq2nYngs4tBwMySr2FdvFIBgsDLtNyyoxywXkFw2a64ME3LRlTldEwdT+wXzx8Bvi3A7GWag2xGyOHfej0KF2vMT2ZbVtFFWM4in0ANkQyoaBQkMuir3ngguq6zBjkFciwiduW5b8azOb2UsrWKIhh1fnAeWrl1SUCGc8l14HUJmI2wXbGm37CkEQXec7YZwXorvrqHHqFKC17CYQ9VI91D7ZO7xvFwzdWjclu5aOdeXChIVKdDG94l5tesC4EzWQ40ibiPq7ZbfrJeAAlkLQ3GHqkwjfKYSG05YV5gJ2BX2CI7k9MB01q6jvibBOrUHVcBk/NmknJoz3rYzljw5srgkX9jhL0LDt9HjRev9Y4nc0nNtRinnoLyqgicTJYaFTdxsSIoqVD9uY=
 before_install:
-  - export DJANGO_SETTINGS_MODULE=api_sd.settings
-  - export PYTHONPATH=$HOME/builds/trekkerghost/api_sd
-  - export PIP_USE_MIRRORS=true
-
+- export DJANGO_SETTINGS_MODULE=api_sd.settings
+- export PYTHONPATH=$HOME/builds/trekkerghost/api_sd
+- export PIP_USE_MIRRORS=true
 install:
-  - pip3 install -r requirements.txt
-  - pip3 install django==$DJANGO --quiet
-  - pip3 install psycopg2 --quiet
-
+- pip3 install -r requirements.txt
+- pip3 install django==$DJANGO --quiet
+- pip3 install psycopg2 --quiet
 before_script:
-  - psql -c "CREATE DATABASE api_sd;" -U postgres
-
+- psql -c "CREATE DATABASE api_sd;" -U postgres
 script:
-  - python3 manage.py makemigrations
-  - python3 manage.py migrate
-  - coverage run --source=. manage.py test --noinput --settings=api_sd.settings
-
+- python3 manage.py makemigrations
+- python3 manage.py migrate
+- coverage run --source=. manage.py test --noinput --settings=api_sd.settings
 after_success:
-  - coveralls
+- coveralls
+deploy:
+  provider: heroku
+  api_key:
+    secure: csklVG1+naWdVh7Ptsd8Y7XwT7ZfvQizaO8Wgm7JXwErbvvs0vvmmpKvoCoSTdTsu5xZ7mSN0yKXM75thSN8bBpAOM9rPH+4tB7UUZtUQkGdzADcgf76ZqI5FJwhh6hm6d/nH6gpKlYQb0c9Mm+CD/kmaMVUwm+CKOF8yHsfwIrvKWEI8z/RAm2UzF2+0KYJDAWjFkcRrA+jAj9O23Xbzg4/fouX7WeoKG8yYuT+dFF2HbvARo6U51jDS5wpoCTmP0hDD5+0A9kzJRMRvPdJ9zdrKdIBO/HyVQsmcvHU77HeTlTknZMBR0ry+rD9P3q3yq4kaR9mtt6eSE65Wp2o2StaSsemP0vxwjBV24fyCbJUkxBRatgvNYGnLsfz4efJZsLn51DBf274jvV80dOAutZa/Ny+ctlcCVwDzZ0W/EQVnUNFu8hszwAQcinNJ128nX8BojaQfXmuIKmJGANnfV5IBzPRsXhxhf7mK48XpcFbeR7/UlyfmoTB/JjOXjhZCEDjbLnYkkmwtTsZyqfkOSjzKddRArtiC0gYQLb64c6iBEov1zib+hhMsQnC4Gs/1LF5A36nV6kKtf7yuBhUghy9CbRUMBTVGhDq0VEaMV/w8McXlAMNIs67XKlheRz+p1sqwEaN4Y3KZXTn02RwRjPHHYYgsEzNYxigzWCIsLA=
