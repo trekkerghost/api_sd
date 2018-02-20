@@ -2,7 +2,7 @@
 from django.test import TestCase
 from django.urls import reverse
 
-from api.models import Product, ProductTags
+from api.models import Brand, Product, ProductTags
 
 
 class ModelTestCase(TestCase):
@@ -12,10 +12,11 @@ class ModelTestCase(TestCase):
         '''Definir un producto'''
         self.name = "Prueba de creación de productos"
         self.tags = ProductTags(name='nuevo')
+        self.brand = Brand(name='Nike')
+        self.brand.save()
         self.producto = Product(
             name='Producto 1',
-            description='Producto de prueba 1',
-            quantity=20.5)
+            description='Producto de prueba 1',brand=self.brand)
 
     def test_modelo_puede_crear_producto(self):
         '''Prueba la creacion del modelo producto'''
@@ -47,18 +48,42 @@ class APITestCase(TestCase):
 
     def test_borrar_producto(self):
         self.tags = ProductTags(name='nuevo')
+        self.brand = Brand(name='Nike')
+        self.brand.save()
         self.producto = Product(
             name='Producto 1',
-            description='Producto de prueba 1',
-            quantity=20.5)
+            description='Producto de prueba 1',brand=self.brand)
         self.producto.save()
         self.tags.save()
         self.producto.tags.add(self.tags)
         self.producto.save()
-        print(self.producto)
         response = self.client.delete(
             reverse('api:delete', kwargs={
                 'pk': self.producto.pk
             }))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Se ha eliminado satisfactoriamente')
+
+    def ntest_actualizar_producto(self):
+        self.tags = ProductTags(name='nuevo')
+        self.brand = Brand(name='Nike')
+        self.brand.save()
+        self.producto = Product(
+            name='Producto 1',
+            description='Producto de prueba 1',brand=self.brand)
+        self.producto.save()
+        self.tags.save()
+        self.producto.tags.add(self.tags)
+        self.producto.save()
+        response = self.client.put(
+            reverse('api:update', kwargs={
+                'pk': self.producto.pk
+            }),
+            data={
+                "pk": self.producto.pk,
+                "name": "Producto nombre nuevo",
+                "description": "Modificada"
+            })
+        self.assertEqual(self.producto.name, 'Producto nombre nuevo')
+        self.assertEqual(self.producto.description, 'Modificada')
+        self.assertContains(response, 'Producto modificado satisfactoriamente')
