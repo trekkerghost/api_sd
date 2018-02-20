@@ -13,6 +13,7 @@ class ProductTags(models.Model):
     def __str__(self):
         return self.name
 
+
 class Brand(models.Model):
     '''Definición de modelo para marca del producto'''
     name = models.CharField(
@@ -37,14 +38,20 @@ class Product(models.Model):
         decimal_places=3,
         max_digits=10,
         verbose_name=_('Product quantity'))
-    tags = models.ManyToManyField(ProductTags, blank=True, verbose_name=_('Product tags'))
+    tags = models.ManyToManyField(
+        ProductTags, blank=True, verbose_name=_('Product tags'))
     created_at = models.DateTimeField(
-        auto_now_add=True,  editable=False, verbose_name=_('Creation date'))
+        auto_now_add=True, editable=False, verbose_name=_('Creation date'))
     updated_at = models.DateTimeField(
-        auto_now=True,
-        editable=False,
-        verbose_name=_('Modified date'))
-
+        auto_now=True, editable=False, verbose_name=_('Modified date'))
+    is_active = models.BooleanField(default=False)
+    product_type = models.CharField(max_length=2, blank=True, null=True)
+    is_variation = models.BooleanField(default=False)
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    code = models.IntegerField(default=0)
+    family = models.IntegerField(default=0)
+    is_complement = models.BooleanField(default=False)
+    is_delete = models.BooleanField(default=False)
 
     def __str__(self):
-        return "Producto ['id':{0}, 'name':{1}]".format(self.pk, self.name )
+        return "Producto ['id':{0}, 'name':{1}]".format(self.pk, self.name)
