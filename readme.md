@@ -1,7 +1,7 @@
-#API CRUD Challenge for SD
+# API CRUD Challenge for SD
 
 Creación de API usando Python y Django
-it
+
 ## Uso
 
 
@@ -13,3 +13,4 @@ Versiones utilizadas:
 3. PostgreSQL 9.5.1
 
 ## Base de Datos
+

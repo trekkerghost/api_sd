@@ -1,1 +1,30 @@
 language: python
+
+python:
+  - 3.5
+
+services: postgresql
+
+env:
+  - DJANGO=1.11
+
+before_install:
+  - export DJANGO_SETTINGS_MODULE=api_sd.settings
+  - export PYTHONPATH=$HOME/builds/trekkerghost/api_sd
+  - export PIP_USE_MIRRORS=true
+
+install:
+  - pip3 install -r requirements.txt
+  - pip3 install django==$DJANGO --quiet
+  - pip3 install psycopg2 --quiet
+
+before_script:
+  - psql -c "CREATE DATABASE api_sd;" -U postgres
+
+script:
+  - python3 manage.py makemigrations
+  - python3 manage.py migrate
+  - coverage run --source=. manage.py test --noinput --settings=api_sd.settings
+
+after_success:
+  - coveralls
