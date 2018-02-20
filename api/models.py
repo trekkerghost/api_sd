@@ -80,4 +80,4 @@ class ProductDetail(models.Model):
         decimal_places=3,
         max_digits=10,
         verbose_name=_('Product quantity'))
-    product = models.OneToOneField(Product)
+    product = models.OneToOneField(Product, on_delete=models.CASCADE)
