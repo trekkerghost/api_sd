@@ -1,4 +1,5 @@
 '''Definición de pruebas'''
+import json
 from django.test import TestCase
 from django.urls import reverse
 
@@ -16,7 +17,8 @@ class ModelTestCase(TestCase):
         self.brand.save()
         self.producto = Product(
             name='Producto 1',
-            description='Producto de prueba 1',brand=self.brand)
+            description='Producto de prueba 1',
+            brand=self.brand)
 
     def test_modelo_puede_crear_producto(self):
         '''Prueba la creacion del modelo producto'''
@@ -52,7 +54,8 @@ class APITestCase(TestCase):
         self.brand.save()
         self.producto = Product(
             name='Producto 1',
-            description='Producto de prueba 1',brand=self.brand)
+            description='Producto de prueba 1',
+            brand=self.brand)
         self.producto.save()
         self.tags.save()
         self.producto.tags.add(self.tags)
@@ -64,26 +67,26 @@ class APITestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Se ha eliminado satisfactoriamente')
 
-    def ntest_actualizar_producto(self):
+    def test_actualizar_producto(self):
         self.tags = ProductTags(name='nuevo')
+        self.tags.save()
         self.brand = Brand(name='Nike')
         self.brand.save()
         self.producto = Product(
             name='Producto 1',
-            description='Producto de prueba 1',brand=self.brand)
+            description='Producto de prueba 1',
+            brand=self.brand)
         self.producto.save()
-        self.tags.save()
         self.producto.tags.add(self.tags)
         self.producto.save()
+        data = json.dumps({"pk": self.producto.pk,"name": "Producto nombre nuevo","description": "Modificada", "brand": "1"})
         response = self.client.put(
             reverse('api:update', kwargs={
                 'pk': self.producto.pk
             }),
-            data={
-                "pk": self.producto.pk,
-                "name": "Producto nombre nuevo",
-                "description": "Modificada"
-            })
-        self.assertEqual(self.producto.name, 'Producto nombre nuevo')
-        self.assertEqual(self.producto.description, 'Modificada')
+            data=data,
+            content_type='application/json')
+        producto_nuevo = Product.objects.get(pk=self.producto.pk)
+        self.assertEqual(producto_nuevo.name, 'Producto nombre nuevo')
+        self.assertEqual(producto_nuevo.description, 'Modificada')
         self.assertContains(response, 'Producto modificado satisfactoriamente')

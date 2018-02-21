@@ -6,10 +6,12 @@ from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 from api.models import Product, ProductTags
-
-# Create your views here.
+from api.serializers import ProductSerializer
 
 
 #para pruebas
@@ -70,11 +72,9 @@ class APIProductos(View):
                 lista_tags.append(nueva_tag)
             nombre = post_data.get('name')[0]
             descripcion = post_data.get('description')[0]
-            cantidad=post_data.get('quantity')[0]
+            cantidad = post_data.get('quantity')[0]
             producto = Product(
-                name=nombre,
-                description=descripcion,
-                quantity=cantidad)
+                name=nombre, description=descripcion, quantity=cantidad)
             try:
                 producto.save()
                 for tag in lista_tags:
@@ -113,43 +113,22 @@ class APIProductos(View):
             except ObjectDoesNotExist:
                 return JsonResponse({'response': 'Producto no encontrado'})
 
-    def put(self, request, *args, **kwargs):
-        '''Definición de método PUT para actualizar'''
-        print(request.body)
-        post_data = json.loads(request.body.decode('utf-8'))
 
-        # print(request.body)
-        # if post_data:
-        #     try:
-        #         if 'pk' in post_data:
-        #             print('sisasdvskad',post_data)
-        #             lista_tags = []
-        #             for tag in post_data.get('tags')[0].split(','):
-        #                 nueva_tag = ProductTags(name=tag)
-        #                 nueva_tag.save()
-        #                 lista_tags.append(nueva_tag)
-        #             producto = Product.objects.get(pk=post_data.get('pk'))
-        #             producto.name = post_data.get('name')[0]
-        #             producto.description = post_data.get('description')[0]
-        #             producto.quantity=post_data.get('quantity')[0]
-        #             producto.tags = []
-        #             producto.save()
-        #             for tag in lista_tags:
-        #                 producto.tags.add(tag)
-        #             producto.save()
-        #             return JsonResponse(
-        #                 {
-        #                     'response':
-        #                     'Producto modificado satisfactoriamente'
-        #                 },
-        #                 safe=False)
-        #     except ObjectDoesNotExist:
-        #         return JsonResponse(
-        #             {
-        #                 'response': 'Producto no encontrado'
-        #             }, safe=False)
-        # else:
-        #     return JsonResponse(
-        #         {
-        #             'response': 'Petición incorrecta'
-        #         }, safe=False)
+@api_view(['PUT'])
+def actualizar(request, pk):
+    '''Definición de método PUT para actualizar'''
+    try:
+        producto = Product.objects.get(pk=pk)
+    except Product.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'PUT':
+        serializer = ProductSerializer(producto, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            data = serializer.data
+            data['reponse'] = 'Producto modificado satisfactoriamente'
+            return Response(data)
+        else:
+            return Response(
+                serializer.errors, status=status.HTTP_400_BAD_REQUEST)
