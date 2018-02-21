@@ -4,6 +4,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/trekkerghost/api_sd/badge.svg?branch=master)](https://coveralls.io/github/trekkerghost/api_sd?branch=master)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/59aa134fde4a3901694b/maintainability)](https://codeclimate.com/github/trekkerghost/api_sd/maintainability)
+
 Creación de API usando Python y Django
 
 ## Uso
@@ -25,7 +27,10 @@ Crear base de datos
 cargar datos iniciales
 
 `python3 manage.py loaddata brands.json`
+
 `python3 manage.py loaddata producttags.json`
+
 `python3 manage.py loaddata productos.json`
+
 `python3 manage.py loaddata productdetail.json`
 
