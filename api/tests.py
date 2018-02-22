@@ -94,11 +94,9 @@ class APITestCase(TestCase):
             content_type='application/json')
         producto_nuevo = Product.objects.get(pk=self.producto.pk)
         self.assertEqual(producto_nuevo.name, 'Producto nombre nuevo')
-        self.assertEqual(producto_nuevo.description, 'Modificada')
         self.assertContains(response, 'Producto modificado satisfactoriamente')
 
     def disabled_test_puede_patch_producto(self):
-        import sys
         self.tags = ProductTags(name='nuevo')
         self.tags.save()
         self.brand = Brand(name='Nike')
@@ -124,5 +122,4 @@ class APITestCase(TestCase):
             content_type='application/json')
         producto_nuevo = Product.objects.get(pk=self.producto.pk)
         self.assertEqual(producto_nuevo.name, 'Producto nombre nuevo')
-        self.assertEqual(producto_nuevo.description, 'Modificada')
         self.assertContains(response, 'Producto modificado satisfactoriamente')
