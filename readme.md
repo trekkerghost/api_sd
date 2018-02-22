@@ -10,6 +10,8 @@ Creación de API usando Python y Django
 
 ## Uso
 
+[![Documentacion Postman](https://documenter.getpostman.com/view/3755425/api_sd/RVfzhVWf)]
+(https://documenter.getpostman.com/view/3755425/api_sd/RVfzhVWf)
 
 ## Software
 Versiones utilizadas:
@@ -34,3 +36,6 @@ cargar datos iniciales
 
 `python3 manage.py loaddata productdetail.json`
 
+`python3 manage.py runserver`
+
+El endpoint estara en localhost:8000/api/
