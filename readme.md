@@ -8,12 +8,28 @@
 
 Creación de API usando Python y Django
 
+## Features
+
+1. listar todos los productos GET
+2. crear un producto POST
+3. obtener producto por id GET
+4. actualizar producto por id PUT
+5. eliminar producto por id DELETE
+6. actualizar un conjunto de elementos PUT
+7. Endpoint Pagination
+    > Implementación manual. En la repuesta estan todos los links necesarios _first_, _next_,_previous_, _last_, _page count_, _element count_
+8. Integracion continua con Travis CI
+9. Configuracion de CodeClimate
+10. Documentado con Postman. link en sección siguiente
+11. Deployed to heroku at <https://sdcpe-api.herokuapp.com/api/>
+
 ## Uso
 
-[![Documentacion Postman](https://documenter.getpostman.com/view/3755425/api_sd/RVfzhVWf)]
-(https://documenter.getpostman.com/view/3755425/api_sd/RVfzhVWf)
+Documentacion POSTMAN
+<https://documenter.getpostman.com/view/3755425/api_sd/RVfzhVWf>
 
 ## Software
+
 Versiones utilizadas:
 
 1. Python 3.5.2
@@ -38,4 +54,4 @@ cargar datos iniciales
 
 `python3 manage.py runserver`
 
-El endpoint estara en localhost:8000/api/
+El endpoint estará en localhost:8000/api/
