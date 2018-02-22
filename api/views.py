@@ -117,7 +117,9 @@ class APIProductos(View):
                             "href":
                             request.build_absolute_uri(
                                 '/api/list/?page={0}'.format(numero_paginas))
-                        }
+                        },
+                        "page_count": numero_paginas,
+                        "total_records": total_registros
                     }
                 }
                 return JsonResponse(data, safe=False)
