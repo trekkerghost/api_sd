@@ -1,0 +1,2 @@
+exclude_patterns:
+  "api/migrations"
