@@ -16,42 +16,20 @@ from api.models import Product, ProductTags
 from api.serializers import ProductSerializer
 
 
-def format_product(producto):
-    '''retorna un producto como un diccionario'''
-    return {
-        'id': producto.pk,
-        'name': producto.description,
-        'tags': [{
-            'id': tag.id,
-            'name': tag.name
-        } for tag in producto.tags.all()],
-        'created_at': producto.created_at,
-        'updated_at': producto.updated_at,
-        'is_active': producto.is_active,
-        'product_type': producto.product_type,
-        'is_variation': producto.is_variation,
-        'brand': {
-            'brand_id': producto.brand.pk,
-            'brand_name': producto.brand.name
-        },
-        'code': producto.code,
-        'family': producto.family,
-        'is_complement': producto.is_complement,
-        'is_delete': producto.is_delete,
-        'detalle': {
-            'created': producto.productdetail.created,
-            'modified': producto.productdetail.modified,
-            'is_active': producto.productdetail.is_active,
-            'is_visibility': producto.productdetail.is_visibility,
-            'price': producto.productdetail.price,
-            'price_offer': producto.productdetail.price_offer,
-            'offer_day_from': producto.productdetail.offer_day_from,
-            'offer_day_to': producto.productdetail.offer_day_to,
-            'sku': producto.productdetail.sku,
-            'quantity': producto.productdetail.quantity,
-        }
-    }
+from django.db.models.fields.related import ManyToManyField
 
+def format_product(producto):
+    opts = producto._meta
+    data = {}
+    for f in opts.concrete_fields + opts.many_to_many:
+        if isinstance(f, ManyToManyField):
+            if producto.pk is None:
+                data[f.name] = []
+            else:
+                data[f.name] = list(f.value_from_object(producto).values_list('pk', flat=True))
+        else:
+            data[f.name] = f.value_from_object(producto)
+    return data
 
 #para pruebas
 @method_decorator(csrf_exempt, name='dispatch')
