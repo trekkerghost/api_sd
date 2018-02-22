@@ -1,5 +1,6 @@
 '''Definición de pruebas'''
 import json
+
 from django.test import TestCase
 from django.urls import reverse
 
@@ -20,7 +21,7 @@ class ModelTestCase(TestCase):
             description='Producto de prueba 1',
             brand=self.brand)
 
-    def test_modelo_puede_crear_producto(self):
+    def test_puede_crear_producto(self):
         '''Prueba la creacion del modelo producto'''
         cantidad_productos_antes = Product.objects.count()
         self.producto.save()
@@ -48,7 +49,7 @@ class APITestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Producto no encontrado')
 
-    def test_borrar_producto(self):
+    def test_puede_borrar_producto(self):
         self.tags = ProductTags(name='nuevo')
         self.brand = Brand(name='Nike')
         self.brand.save()
@@ -67,7 +68,7 @@ class APITestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Se ha eliminado satisfactoriamente')
 
-    def test_actualizar_producto(self):
+    def test_puede_actualizar_producto(self):
         self.tags = ProductTags(name='nuevo')
         self.tags.save()
         self.brand = Brand(name='Nike')
@@ -79,9 +80,44 @@ class APITestCase(TestCase):
         self.producto.save()
         self.producto.tags.add(self.tags)
         self.producto.save()
-        data = json.dumps({"pk": self.producto.pk,"name": "Producto nombre nuevo","description": "Modificada", "brand": "1"})
+        data = json.dumps({
+            "pk": self.producto.pk,
+            "name": "Producto nombre nuevo",
+            "description": "Modificada",
+            "brand": "1"
+        })
         response = self.client.put(
             reverse('api:update', kwargs={
+                'pk': self.producto.pk
+            }),
+            data=data,
+            content_type='application/json')
+        producto_nuevo = Product.objects.get(pk=self.producto.pk)
+        self.assertEqual(producto_nuevo.name, 'Producto nombre nuevo')
+        self.assertEqual(producto_nuevo.description, 'Modificada')
+        self.assertContains(response, 'Producto modificado satisfactoriamente')
+
+    def disabled_test_puede_patch_producto(self):
+        import sys
+        self.tags = ProductTags(name='nuevo')
+        self.tags.save()
+        self.brand = Brand(name='Nike')
+        self.brand.save()
+        self.producto = Product(
+            name='Producto 1',
+            description='Producto de prueba 1',
+            brand=self.brand)
+        self.producto.save()
+        self.producto.tags.add(self.tags)
+        self.producto.save()
+        data = json.dumps({
+            "id": self.producto.pk,
+            "name": "Producto nombre nuevo",
+            "description": "Modificada",
+            "brand": "1"
+        })
+        response = self.client.patch(
+            reverse('api:update-partial', kwargs={
                 'pk': self.producto.pk
             }),
             data=data,
