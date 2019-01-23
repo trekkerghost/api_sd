@@ -1,4 +1,4 @@
-django==1.11.*
+django>=1.11.18
 psycopg2
 gunicorn
 django-heroku
